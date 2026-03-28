@@ -1,0 +1,186 @@
+DONE:
+- display 1 single tile on screen
+- tested tile clicking mechanism
+- display tiles of diff types on screen
+- added initial tile map structure + tile_type -> colour conversion (img for final game)
+- clicked tiles vanish from game screen and tile_map list after clicking
+- add items bar on screen
+- clicked tiles in game screen will appear in items bar and added to collected_tiles list
+- if got 3x combo in items bar, reduce number of remaining tiles and eliminate these 3 tiles from items bar (tile on game screen -> items bar --3x combo--> gone from game -> remaining tiles--)
+- WIN if no more remaining tiles left
+- LOSE if number of items in items bar > 7
+- add important game states:"playing", "game won", "game lost"
+- add organized grid point structure
+- display multiple layers on screen and in lists, but can still click back layers
+- only allow clicking for front layer 
+- bring any exposed tiles (after removing clicked tile) from back layers to top layers so thats its visible and clickable, test for 3 layers
+- add tile stacking feature for 1 direction
+- test tile stacking for all 4 directions
+- count number of tiles based on tile map
+- rng tile maps (including stacks)
+- change coloured boxes to pics
+- darken colours of back layer tiles
+- test harder levels
+- make a level editor (left click for adding, like paint brush, right click for removing)
+	- add grid lines
+	- preview tiles with green mask for placing that clips with gridlines 
+	- add tiles and display them continuously (map)
+	- remove tiles with left click + floating dock
+	- display number of tiles (affected by layer deletion, tile addition/deletion, all 3 clears) 
+	- enable multiple layers (layer addition(add layer just after current layer, not at the end)/deletion and selection) + layer cap + prevent deleting 1st layer
+	- clear current layer + clear all layers + clear whole level(start from fresh 1 layer)
+	- display layers on side bar (affected by layer addition/deletion, reset level, switching between layers)
+	- swap layers on side bar and tile map by drag and drop
+	- find a way to deal with stacks (add/delete stacks, add/delete stack count(with upper and lower limit + confirm button)) 
+	- collision detection for tiles with stacks
+	- save map to a txt file
+	- read from existing levels text files (detect how many levels exist) and continue editing, then updating and saving back into text file
+	- manipulation/reading of text files (affected by left/right level, delete level, saving new/existing level)
+	- enable multiple levels + level selection
+	- fix level bug (order of the filename wrong, Ex. 1,2,4,5 (3 deleted), rename-> 1234) (affected by add/delete level)
+	- allow adding levels in between (fixed 3_1 -> 3 successfully, rename from back to front)
+	- recalculate the map and stacks by changing level (affected by deleting level, left/right level)
+	- update number of levels, number of layers and number of tiles by counting and put these into functions
+	- limitation - highest number of levels = 9, otherwise the os.listdir() got issues, 10_map < 1_map coz of ASCII values
+	- add checking to fill up map if map empty
+	- make button into class
+	- transfer long codes for specific buttons into functions
+	- add pic all clear buttons(done), and top buttons (save, delete level, back, settings)
+	- make buttons 50% transparent if not available
+	- transfer all classes and functions into separate py file
+	- display only number of tiles left to put for it to be valid
+	- warning colour if tile is not multiple of 3: shake number of tiles to put to catch attention + fixed bug ori pos changing
+	- read level names at start from txt file and save level names into txt file in save function 
+	- add rename level title button + function + done (affected by delete level, adding level and loading level) (all keys, CAPSLOCK, BACKSPACE, cursor+left/right arrow keys) 
+	  (change level name to be limited by box, not char count)
+	- blinking rename cursor (affected by left/right arrow, typing letters and backspace)
+	- change loading and saving stacks from np to using normal method to allow for non-uniform stacks (ex: [[1,2], [1,2,3,4]])
+	- change loading and saving map from np to using normal method
+	- change calculating number of tiles from np to normal
+	- remove floating dock, use buttons to add/remove tiles/stacks
+	- add new level button in level select page + function 
+	- load level from level select page + function (view button, set current level when view pressed)
+	- delete button from editing mode will delete level and go back to last selected level select page
+	- delete button in level select will delete level and stay on same page
+	- level select page (new level/delete level, view button here)
+	- back button: editing -> level select, level select -> main menu
+	- rename screen after pressing new level and before entering editing mode
+	- in editing mode disable everything else other than rename and done button
+	- settings page (resume editing, add grid visibility checkbox, sound on/off, back to main menu)
+	- add preview level
+	- convert diff game states into functions
+	- add testing button and stage
+	- level select page: add pics for each level (take screenshot in preview mode and stick it to each level tile), set limit for name
+	- reduce number of buttons pics in folder: allow button name and image name used for button to be diff
+	- track the returning to prev function from diff states 
+		(change state after entering new state, set target state before leaving state(running=False) only for those that need more than 1 step and is absolute, 
+		check whether state==target_state after leaving state)
+	- rename file order for level pics also
+	- fix bug: create new level but haven't saved, then delete level/ exit to level select or main menu 
+	- for settings dialog box, use a function and render only the parts involving those dialog boxes, everything else won't be affected
+	- if exiting AND there's invalid tile count, prevent exit and show warning 
+	- fixed bug: map from play test is same as map from level editor, so when play testing, tiles that were pressed will be missing when return to editing
+    - new level (DONE), cancel new level (DONE), back (DONE), create new level (DONE), rename button (DONE), edit level (DONE)
+    - fix bug: prevent add/delete layer/change modes/swap layers/preview/play test/save/reset/delete level/settings when in stack setting
+    - fix bug: play test -> back to level select -> go straight back to menu: coz target state was play level select, not editor level select
+    - fix bug: prevent scrolling between layers when editing stacks
+    - convert direction arrows and plus/minus/tick for stack setting into buttons
+- read tile map from txt file
+- level select page
+- play level
+- settings button and page (resume, give up, sound on/off, back to level select, back to main menu)
+- use settings menu for pause feature (ESC)
+- make all buttons
+- add music
+- perfect menu (game title, background pic)
+- restart level
+- add power ups (undo, shuffle(+ animation), extend items bar)
+- add game over and win screen (add these to the play test stage too)
+- add progress bar + level name at top in play level
+- standardize fonts
+- add pic of sheep in settings screen
+- add page number at bottom of level select screen
+- add warning for tile count
+- add instructions if hover over any button for more than 1 secs
+- add animations: make same items move in tgt after pressed (from map and extra collected items), 3x combos and disappear, power ups(undo, extend items bar)
+(optional: transition from main menu to level select + vice versa, level select pages, new level box, settings box, transition from level select to play/editor,
+	   tiles distributing from center at start of game)
+    - fix speed + change animation stopping condition (DONE)
+    - prevent 2 tiles moving at same time (DONE)
+    - tile move back (DONE)
+    - 3x combo (tiles shrink + shiny) (DONE)
+    - extra collected items -> items bar (DONE)
+    - extend items bar (DONE)
+    - limit undo power up to only allow undo map->items bar/ extra collected items -> items bar, but not any power ups
+        (keep track of map, stacks, extra collected items and collected items)
+    - undo animation (DONE)
+        - collected tiles -> map / collected tiles -> stacks / collected tiles -> extra collected items (DONE)
+        - bug: after update bottom layer go to top, then when undo will have overlapping tiles on top layer (FIXED)
+    - transition from main menu to level select + vice versa (DONE)
+    - transition between level select pages (NOPE)
+    - new level box, settings box (NOPE)
+    - transition from level select to play/editor + make sheep image (DONE)
+	- tiles distributing from center at start of game (NOPE)
+- fix bugs:
+    - extending stack after set direction, it doesn't check for collision with other tiles and must be within MAP BOUNDARY RECT (DONE)
+        - need to check collision of whole stack with any tile after increasing 1 tile (DONE)
+    - restrict stack placement to top layer only (DONE)
+    - buttons being blocked when placing stacks if outside of map boundary (DONE)
+    - disable stack direction that are invalid after checking validity for each direction (DONE)
+    - delete stack error (DONE)
+    - check for delete stacks if mouse hover over any part of stack (DONE)
+        - make transparent black rect cover whole stack (DONE)
+- load all tile images at the start into a list and only grab from that preloaded list (DONE)
+- add loading screen
+- add sounds (button click (DONE), 3x combo(DONE), error(DONE)) (bfxr)
+- add music (game win, game loss) (DONE)
+- create more tile types (rice, corn, cabbage, gloves, brush, milk bottle, bell) (DONE)
+- fixed music keep restarting when music on back + music on/off toggle on main menu and level select
+- create at least 5 levels
+- caption + icon
+- fix bug: - restart in play -> progress bar doesn't reset
+
+
+############################################################################################################################################
+PENDING:
+- make an editor (left click for adding, like paint brush, right click for removing)
+	OPTIONAL:
+	- add save level confirmation screen before leaving level editor/preview level/play test
+	- button state must remain pressed when LMB held down, and function only runs when LMB released
+	- create outlined font that can be used for game (sidequest: create mask tutorial project)
+	- add tutorial stage
+	- bug (saving button causes lag/unresponsive buttons)
+	- for rename dialog box, use a function and render only the parts involving those dialog boxes, everything else won't be affected
+	- add undo and redo buttons + functions (store all game states in txt files: all levels map and stacks txt files, number_of_levels, variables: )
+
+- fix bug:
+    - screen resolution for carina's laptop
+- add instruction
+
+OPTIONAL:
+* level editor: use 01 instead of 1 to fix max levels limitation
+* wait frame buffer to see 3x combo in items bar before they disappear (OPTIONAL)
+* restrain mouse cursor to stay within game window (OPTIONAL)
+* sheep floating around
+* rick roll to continue playing
+* chg cursor
+* full screen
+
+WHAT I COULD HAVE DONE BETTER: 
+- Visualize layout of each page on photoshop or illustrator
+- make a state diagram of all menu screens
+- find a better way to transition between states instead of using game state
+- start separating different menu screens into diff functions at start, will be very tedious later on
+- add side quests for mouse functionality and typing key/key binding, renaming, 
+- able to reuse same pictures for buttons, instead of copy pasting same pics with diff names for diff uses
+- for menu screens that hover over existing one like settings/pause menu, use a diff function and render only the rect that encompasses that menu
+- layout which items on each screen will be printed from back to front
+- just use return instead of running=false and break
+- load all images (especially large images) before entering game loop to prevent lag
+- use rects for positioning blocks in UI or HUD
+- find a better way to reset all important variables
+- use classes & objects for interactable things like buttons/tiles
+- use a global folder to store all resources and use a global variable for subfolders within resources (ex: audio_folder: 'resources/audio/')
+
+Discoveries from other games:
+- music volume softens when enter settings or pause
