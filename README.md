@@ -19,14 +19,19 @@ This game is a match-3 type game that I got inspired to recreate when a friend o
 
 # How to Run
 ### Windows
-Run `main.exe`
+1. Download the zip and extract it.
+2. Navigate to the extracted folder and run `main.exe`.
 
 ### Linux
-Install `wine` using your distro's package manager. For example, for Ubuntu:
+1. Clone the repo:
+```
+git clone git@github.com:BenLam2000/sheep-sheep-game.git sheep-sheep-game
+```
+3. Install `wine` using your distro's package manager. For example, for Ubuntu:
 ```
 sudo apt install wine
 ```
-To run the game:
+3. To run the game, navigate to the repo and run:
 ```
 wine main.exe
 ```
