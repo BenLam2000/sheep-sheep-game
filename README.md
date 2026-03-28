@@ -1,2 +1,13 @@
-# sheep-sheep-game
-Match-3 type game inspired by similar game on WeChat, features multiple levels and custom level editor.
+# Instructions
+### Windows
+Run `main.exe`
+
+### Linux
+Install `wine` using your distro's package manager. For example, for Ubuntu:
+```
+sudo apt install wine
+```
+To run the game:
+```
+wine main.exe
+```
